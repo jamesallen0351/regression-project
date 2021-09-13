@@ -47,7 +47,7 @@
     - Goal: leave this section with a dataframe ready to prepare.
     - Create an acquire.py file the reproducible component for gathering data from a database using SQL and reading it into a pandas DataFrame.
 
-- Prep
+- Prepare
     - Goal: leave this section with a dataset that is split into train, validate, and test ready to be analyzed. Make sure data types are appropriate and missing values have been addressed, as have any data integrity issues.
     - Create a prep.pyfile as the reproducible component that handles missing values, fixes data integrity issues, changes data types, scales data, etc.
 
@@ -87,6 +87,6 @@
 
 - Create an .env file with your own username/pass/host to use the get_connection function in my acquire.py in order to access the Zillow database.
 
-- Make a copy of my acquire, prep, explore files to use the functions within the files.
+- Make a copy of my acquire, prepare, explore files to use the functions within the files.
 
 - Make a copy of my final notebook, run each cell, and adjust any parameters as desired.
