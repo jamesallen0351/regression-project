@@ -11,6 +11,7 @@ import seaborn as sns
 import numpy as np
 import os
 
+from env import host, user, password
 from env import host, user, password # I already added my env to .gitignore first and then to my repository
 
 # establishing get_connection function
@@ -67,7 +68,7 @@ def clean_zillow(df):
     df = df.set_index('parcel_id')
     
     # dropping all nulls 
-    df = df.dropna(subset=['sqft','tax_value'])
+    df = df.dropna(subset=['sqft','tax_value', 'year_built', 'tax_amount'])
     
     return df
     

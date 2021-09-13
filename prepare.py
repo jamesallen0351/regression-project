@@ -4,7 +4,9 @@ import os
 import pandas as pd
 import numpy as np
 from scipy import stats
-from env import username, host, password 
+
+from env import host, user, password
+
 from sklearn.feature_selection import SelectKBest, f_regression, RFE
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
@@ -19,44 +21,7 @@ def remove_outlier(df):
     new_df = df[(np.abs(stats.zscore(df['tax_value'])) < 3)]
     
     return new_df
-    
-def clean_zillow(df):
-
-    #select features for df
-    features = ['parcelid', 'calculatedfinishedsquarefeet', 'bathroomcnt', 'bedroomcnt', 'taxvaluedollarcnt', 'yearbuilt','fips']
-    df = df[features]
-    
-    #for the yearbuilt column, fill in nulls with 2017.
-    df['yearbuilt'].fillna(2017, inplace = True)
-   
-    #create a new column named 'age', which is 2017 minus the yearbuilt
-    df['age'] = 2017-df['yearbuilt']
-    
-    #drop duplicates in parcelid
-    df = df.drop_duplicates(subset=['parcelid'])
-    
-    #rename columns for easier use
-    df = df.rename(columns={
-                            'parcelid': 'parcel_id',
-                            'calculatedfinishedsquarefeet': 'sqft',
-                            'bathroomcnt': 'baths',
-                            'bedroomcnt': 'beds',
-                            'taxvaluedollarcnt':'tax_value'
         
-    })
-    
-    #set index
-    df = df.set_index('parcel_id')
-    
-    #drop nulls in sqft and tax_value
-    df = df.dropna(subset=['sqft','tax_value'])
-    
-    #drop year_built, we can just use age.
-    df = df.drop(columns=['yearbuilt'])
-    
-    return df
-    
-
 
 def train_validate_test(df, target):
   
@@ -84,11 +49,11 @@ def train_validate_test(df, target):
 
 def get_object_cols(df):
   
-    # create a mask of columns whether they are object type or not
+    # creating a mask of columns into 'object'
     mask = np.array(df.dtypes == "object")
 
         
-    # get a list of the column names that are objects (from the mask)
+    # getting a list of column names that are objects from mask
     object_cols = df.iloc[:, mask].columns.tolist()
     
     return object_cols
