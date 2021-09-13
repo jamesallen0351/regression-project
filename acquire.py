@@ -19,12 +19,12 @@ def get_connection(db, user=user, host=host, password=password):
     return f'mysql+pymysql://{user}:{password}@{host}/{db}'
 
 
-    
+# getting zillow data for single unit properties from codeup database    
 def new_zillow_data():
     sql_query = '''select * from properties_2017
     join predictions_2017 using(parcelid)
     where transactiondate between "2017-05-01" and "2017-08-31"
-    and propertylandusetypeid in (260, 261, 262, 263, 264, 265, 266, 273, 275, 276, 279)'''
+    and propertylandusetypeid in (260, 261, 262, 263, 264, 265, 273, 275, 279)'''
     
     df = pd.read_sql(sql_query, get_connection('zillow'))
     
@@ -41,16 +41,17 @@ def get_zillow_data():
         df.to_csv('zillow.csv')
     
     return df
-    
-    
-    
-    
+
+
+# cleaning up the zillow data to use for regression project, dropping columns and nulls and renaming remaining columns
 def clean_zillow(df):
-    #select features for df, took these features from my acquire exercise
+    
+    # selecting features needed for zillow project
     features = ['parcelid', 'calculatedfinishedsquarefeet', 'bathroomcnt', 'bedroomcnt', 'taxvaluedollarcnt','yearbuilt','taxamount','fips']
     df = df[features]
 
-    #rename columns for easier use
+    
+    # renaming my columns to make them easier to use and read
     df = df.rename(columns={
                             'parcelid': 'parcel_id',
                             'calculatedfinishedsquarefeet': 'sqft',
@@ -62,9 +63,11 @@ def clean_zillow(df):
         
     })
     
-    #set index
+    # setting my index
     df = df.set_index('parcel_id')
-    #drop nulls
+    
+    # dropping all nulls 
     df = df.dropna(subset=['sqft','tax_value'])
     
     return df
+    
