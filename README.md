@@ -9,7 +9,7 @@
 - Baseline: $363,349
 - Prediction: $269,196
 
-### Tax Counties:
+### Counties and Tax %:
 - Los Angeles: 1.38 %
 - Orange: 1.20 %
 - Ventura: 1.19%
@@ -54,8 +54,6 @@
 | propertylandusetypeid        | N/A       | Type of property                                |
 | yearbuilt                    | N/A       | The year the property was built                 |
 | taxvaluedollarcnt            | tax_value | Property's tax value in dollars                 |
-| transactiondate              | N/A       | Day the property was purchased                  |
-| age                          | N/A       | 2017-yearbuilt (to see the age of the property) |
 | taxamount                    | tax_amount| amount of tax on property                       |
 | tax_rate                     | N/A       | tax_rate on property                            |
 
@@ -89,9 +87,9 @@
 
 ## Key Findings and Takeaways
 
-- The number of bedrooms has an affect on property value
+- The number of bedrooms is positively related to property value
 
-- The number of bathrooms has an affect on property value
+- The number of bathrooms is positively related to property value
 
 - The Linear Regression test data outperformed the baseline in predicting property value
 
@@ -102,7 +100,7 @@
 
 ## Next steps
 
-- With more time I would do:
+- With more time I would like to:
 
     - a. Explore the year built and age of propety compared to property value
     
@@ -112,7 +110,7 @@
 
 ## To Recreate my project
 
-- Create an .env file with your own username/pass/host to use the get_connection function in my acquire.py in order to access the Zillow database.
+- Create your own .env file with your own username/password/host to use the get_connection function in my acquire.py in order to access the Zillow database.
 
 - Make a copy of my acquire and prepare files to use the functions within the files.
 
