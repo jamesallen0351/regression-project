@@ -37,6 +37,21 @@
 ## Data Dictionary
 
 - Write my data dictionary here[]
+| Column Name                  | Renamed   | Info                                            |
+|------------------------------|-----------|-------------------------------------------------|
+| parcelid                     | N/A       | ID of the property (unique)                     |
+| bathroomcnt                  | baths     | number of bathrooms                             |
+| bedroomcnt                   | beds      | number of bedrooms                              |
+| calculatedfinishedsquarefeet | sqft      | number of square feet                           |
+| fips                         | N/A       | FIPS code (for county)                          |
+| propertylandusetypeid        | N/A       | Type of property                                |
+| yearbuilt                    | N/A       | The year the property was built                 |
+| taxvaluedollarcnt            | tax_value | Property's tax value in dollars                 |
+| transactiondate              | N/A       | Day the property was purchased                  |
+| age                          | N/A       | 2017-yearbuilt (to see the age of the property) |
+| taxamount                    | tax_amount| amount of tax on property                       |
+| tax_rate                     | N/A       | tax_rate on property                            |
+
 
 ## Data Science Pipeline
 
@@ -77,7 +92,7 @@
 
 - With more time I would do:
 
-    - a.
+    - a. 
     
     - b. 
     
@@ -87,6 +102,6 @@
 
 - Create an .env file with your own username/pass/host to use the get_connection function in my acquire.py in order to access the Zillow database.
 
-- Make a copy of my acquire, prepare, explore files to use the functions within the files.
+- Make a copy of my acquire and prepare files to use the functions within the files.
 
 - Make a copy of my final notebook, run each cell, and adjust any parameters as desired.
