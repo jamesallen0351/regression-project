@@ -36,22 +36,19 @@
 
 ## Data Dictionary
 
-- Write my data dictionary here[]
-| Column Name                  | Renamed   | Info                                            |
-|------------------------------|-----------|-------------------------------------------------|
-| parcelid                     | N/A       | ID of the property (unique)                     |
-| bathroomcnt                  | baths     | number of bathrooms                             |
-| bedroomcnt                   | beds      | number of bedrooms                              |
-| calculatedfinishedsquarefeet | sqft      | number of square feet                           |
-| fips                         | N/A       | FIPS code (for county)                          |
-| propertylandusetypeid        | N/A       | Type of property                                |
-| yearbuilt                    | N/A       | The year the property was built                 |
-| taxvaluedollarcnt            | tax_value | Property's tax value in dollars                 |
-| transactiondate              | N/A       | Day the property was purchased                  |
-| age                          | N/A       | 2017-yearbuilt (to see the age of the property) |
-| taxamount                    | tax_amount| amount of tax on property                       |
-| tax_rate                     | N/A       | tax_rate on property                            |
-
+Column Name	Renamed	Info
+parcelid	N/A	ID of the property (unique)
+bathroomcnt	baths	number of bathrooms
+bedroomcnt	beds	number of bedrooms
+calculatedfinishedsquarefeet	sqft	number of square feet
+fips	N/A	FIPS code (for county)
+propertylandusetypeid	N/A	Type of property
+yearbuilt	N/A	The year the property was built
+taxvaluedollarcnt	tax_value	Property's tax value in dollars
+transactiondate	N/A	Day the property was purchased
+age	N/A	2017-yearbuilt (to see the age of the property)
+taxamount	tax_amount	amount of tax on property
+tax_rate	N/A	tax_rate on property
 
 ## Data Science Pipeline
 
