@@ -4,7 +4,15 @@
 
 ## Executive Summary
 
-- Write my executive summary here
+- Single Unit Properties: Linear Regression model to predict property values using 2017 data
+
+- Baseline: $363,349
+- Prediction: $269,196
+
+### Tax Counties:
+- Los Angeles: 1.38 %
+- Orange: 1.20 %
+- Ventura: 1.19%
 
 ## Project Overview
 
@@ -35,8 +43,6 @@
     - The repository should also contain the .py files necessary to reproduce your work, and your work must be reproducible by someone with their own env.py file.
 
 ## Data Dictionary
-
-- Write my data dictionary here[]
 
 | Column Name                  | Renamed   | Info                                            |
 |------------------------------|-----------|-------------------------------------------------|
@@ -83,21 +89,26 @@
 
 ## Key Findings and Takeaways
 
-- Write any key findings here
+- The number of bedrooms has an affect on property value
 
-- 
+- The number of bathrooms has an affect on property value
 
-- 
+- The Linear Regression test data outperformed the baseline in predicting property value
+
+- Counties and Tax include:
+    - Los Angeles : 1.38 %
+    - Orange : 1.21 %
+    - Ventura : 1.19 %
 
 ## Next steps
 
 - With more time I would do:
 
-    - a. 
+    - a. Explore the year built and age of propety compared to property value
     
-    - b. 
+    - b. Refine my models with different parameters and run additional tests
     
-    - c. 
+    - c. Map out county locations and run models on specific counties
 
 ## To Recreate my project
 
