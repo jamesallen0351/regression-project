@@ -48,7 +48,7 @@ def get_zillow_data():
 def clean_zillow(df):
     
     # selecting features needed for zillow project
-    features = ['parcelid', 'calculatedfinishedsquarefeet', 'bathroomcnt', 'bedroomcnt', 'taxvaluedollarcnt','yearbuilt','taxamount','fips']
+    features = ['parcelid', 'calculatedfinishedsquarefeet', 'bathroomcnt', 'bedroomcnt', 'taxvaluedollarcnt','yearbuilt','fips']
     df = df[features]
 
     
@@ -59,8 +59,7 @@ def clean_zillow(df):
                             'bathroomcnt': 'baths',
                             'bedroomcnt': 'beds',
                             'taxvaluedollarcnt':'tax_value',
-                            'yearbuilt':'year_built',
-                            'taxamount': 'tax_amount'
+                            'yearbuilt':'year_built'
         
     })
     
@@ -68,7 +67,7 @@ def clean_zillow(df):
     df = df.set_index('parcel_id')
     
     # dropping all nulls 
-    df = df.dropna(subset=['sqft','tax_value', 'year_built', 'tax_amount'])
+    df = df.dropna(subset=['sqft','tax_value', 'year_built'])
     
     return df
     
