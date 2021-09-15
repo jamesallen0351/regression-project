@@ -11,7 +11,7 @@
 
 ### Counties and Tax %:
 - Los Angeles: 1.38 %
-- Orange: 1.20 %
+- Orange: 1.21 %
 - Ventura: 1.19%
 
 ## Project Overview
